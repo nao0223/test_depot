@@ -16,34 +16,23 @@ class CartsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create cart" do
-    assert_difference('Cart.count') do
-      post :create, cart: {  }
-    end
-
-    assert_redirected_to cart_path(assigns(:cart))
-  end
 
   test "should show cart" do
-    get :show, id: @cart
+    get :show, id: @cart.to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @cart
+    get :edit, id: @cart.to_param
     assert_response :success
   end
 
-  test "should update cart" do
-    patch :update, id: @cart, cart: {  }
-    assert_redirected_to cart_path(assigns(:cart))
-  end
 
   test "should destroy cart" do
     assert_difference('Cart.count', -1) do
-      delete :destroy, id: @cart
+      delete :destroy, {id: @cart.to_param}, {cart_id: @cart.id}
     end
 
-    assert_redirected_to carts_path
+    assert_redirected_to store_path
   end
 end

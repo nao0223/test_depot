@@ -35,6 +35,26 @@
     width: 13em;
     background: #141;
 
+    form, div {
+      display: inline;
+    }  
+
+    input {
+      font-size: small;
+    }
+
+    #cart {
+      font-size: smaller;
+      color:     #fff;
+
+      table {
+        border-top:    1px dotted #595;
+        border-bottom: 1px dotted #595;
+        margin-bottom: 10px;
+      color:     #fff;
+      }
+    }
+
     ul {
       padding: 0;
 
@@ -49,3 +69,4 @@
     }
   }
 }
+
