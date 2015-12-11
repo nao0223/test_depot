@@ -47,7 +47,9 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(params[:order])
+    attr = params.require(:order).permit(:name, :address, :email, :pay_type)
+   # @order = Order.new(params[:order])
+    @order = Order.new(attr)
     @order.add_line_items_from_cart(current_cart)
     respond_to do |format|
       if @order.save
