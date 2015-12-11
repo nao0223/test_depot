@@ -9,11 +9,9 @@
 #
 # 日本語版については http://ssl.ohmsha.co.jp/cgi-bin/menu.cgi?ISBN=978-4-274-06866-9
 #---
-class LineItem < ActiveRecord::Base
-  belongs_to :order
-  belongs_to :product
-  belongs_to :cart
-  def total_price
-    product.price * quantity
+Order.transaction do
+  (1..100).each do |i|
+    Order.create(:name => "Customer #{i}", :address => "#{i} Main Street",
+      :email => "customer-#{i}@example.com", :pay_type => "現金")
   end
 end

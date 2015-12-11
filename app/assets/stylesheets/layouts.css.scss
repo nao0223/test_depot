@@ -1,3 +1,13 @@
+//***
+// Excerpted from "Agile Web Development with Rails, 4th Ed.",
+// published by The Pragmatic Bookshelf.
+// Copyrights apply to this code. It may not be used to create training material, 
+// courses, books, articles, and the like. Contact us if you are in doubt.
+// We make no guarantees that this code is fit for any purpose. 
+// Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
+//
+// 日本語版については http://ssl.ohmsha.co.jp/cgi-bin/menu.cgi?ISBN=978-4-274-06866-9
+//***
 #banner {
   background: #9c9;
   padding: 10px;
@@ -45,13 +55,12 @@
 
     #cart {
       font-size: smaller;
-      color:     #fff;
+      color:     white;
 
       table {
         border-top:    1px dotted #595;
         border-bottom: 1px dotted #595;
         margin-bottom: 10px;
-      color:     #fff;
       }
     }
 
@@ -70,3 +79,38 @@
   }
 }
 
+.depot_form {
+  fieldset {
+    background: #efe;
+
+    legend {
+      color: #dfd;
+      background: #141;
+      font-family: sans-serif;
+      padding: 0.2em 1em;
+    }
+  }
+
+  form {
+    label {
+      width: 5em;
+      float: left;
+      text-align: right;
+      padding-top: 0.2em;
+      margin-right: 0.1em;
+      display: block;
+    }
+
+    select, textarea, input {
+      margin-left: 0.5em;
+    }
+
+    .submit {
+      margin-left: 4em;
+    }
+
+    br {
+      display: none
+    }
+  }
+}
