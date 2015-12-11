@@ -13,7 +13,8 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders = Order.paginate(:page=>params[:page], :per_page => 10).order('id DESC')
+#    @orders = Order.paginate(:page=>params[:page], :order=>'created_at desc',:per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -57,9 +58,7 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    attr = params.require(:order).permit(:name, :address, :email, :pay_type)
-    @order = Order.new(attr)
-    # @order = Order.new(params[:order])
+    @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
 
     respond_to do |format|
